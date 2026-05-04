@@ -1,73 +1,104 @@
-# React + TypeScript + Vite
+# ivorchu.github.io
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio website built with Vite, React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Framework**: React 19 + TypeScript
+- **Build tool**: Vite
+- **Styling**: Tailwind CSS v3
+- **Icons**: lucide-react
+- **Deployment**: GitHub Pages via `gh-pages` branch
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local development
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build      # type-check + bundle → dist/
+npm run preview    # serve dist/ locally
+```
+
+---
+
+## Editing content
+
+All site content lives in `src/data/` — no need to touch components:
+
+| File | What to edit |
+|------|-------------|
+| `src/data/research.ts` | Research projects |
+| `src/data/projects.ts` | Personal / class projects |
+| `src/data/experience.ts` | Work and research roles |
+| `src/data/courses.ts` | Coursework |
+
+Contact links (GitHub, LinkedIn, email) are in `src/components/sections/Contact.tsx`.
+
+### Adding your resume
+
+Place your resume PDF at `public/resume.pdf`. The Resume section links automatically.
+
+---
+
+## Deployment to GitHub Pages
+
+### Option A — Automated (recommended)
+
+The included GitHub Actions workflow (`.github/workflows/deploy.yml`) builds and deploys on every push to `main`.
+
+1. Push the repo to GitHub (`ivorchu/ivorchu.github.io`).
+2. In **Settings → Pages**, set **Source** to the `gh-pages` branch, root folder.
+3. Push any commit to `main` — Actions will build and publish automatically.
+4. Your site will be live at `https://ivorchu.github.io` within ~2 minutes.
+
+### Option B — Manual deploy
+
+```bash
+npm run deploy
+```
+
+This runs `npm run build` then pushes `dist/` to the `gh-pages` branch using the `gh-pages` package.
+
+Then configure GitHub Pages to serve from the `gh-pages` branch (see step 2 above).
+
+---
+
+## Project structure
+
+```
+src/
+├── components/
+│   ├── Navbar.tsx
+│   ├── sections/          # One file per page section
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Research.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Courses.tsx
+│   │   ├── Resume.tsx
+│   │   └── Contact.tsx
+│   └── ui/                # Reusable primitives
+│       ├── Tag.tsx
+│       ├── SectionHeader.tsx
+│       ├── ProjectCard.tsx
+│       └── ResearchCard.tsx
+├── data/                  # ← Edit your content here
+│   ├── research.ts
+│   ├── projects.ts
+│   ├── experience.ts
+│   └── courses.ts
+└── types/
+    └── index.ts
+public/
+└── resume.pdf             # ← Drop your resume here
 ```
