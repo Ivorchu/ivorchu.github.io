@@ -12,7 +12,7 @@ const links = [
   {
     icon: LinkedinIcon,
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/ivorchu',
+    href: 'https://www.linkedin.com/in/ivorchu/',
     display: 'linkedin.com/in/ivorchu',
   },
   {
@@ -27,25 +27,23 @@ export default function Contact() {
   return (
     <section id="contact" className="px-6 py-24">
       <div className="mx-auto max-w-2xl text-center">
-        <SectionHeader title="Get in Touch" centered />
-        <p className="mb-10 text-slate-400">
-          Open to research collaborations, internship opportunities, or just a good conversation
-          about computer architecture and AI systems.
+        <SectionHeader title="Contact" centered />
+        <p className="mb-10 text-sm text-slate-500">
+          Open to research collaborations, internship opportunities, or just a conversation about
+          computer architecture and AI systems.
         </p>
-        <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
+        <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
           {links.map(({ icon: Icon, label, href, display }) => (
             <a
               key={label}
               href={href}
               target={href.startsWith('mailto') ? undefined : '_blank'}
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-xl border border-slate-700/50 bg-slate-800/40 px-6 py-4 text-left transition-all hover:border-indigo-500/40 hover:bg-slate-800/70"
+              className="flex items-center gap-3 rounded-lg border border-slate-800 px-5 py-4 text-left transition-colors hover:border-slate-700"
             >
-              <Icon size={20} className="shrink-0 text-indigo-400" />
+              <Icon size={18} className="shrink-0 text-slate-400" />
               <div>
-                <p className="text-xs font-medium uppercase tracking-wider text-slate-500">
-                  {label}
-                </p>
+                <p className="font-mono text-xs text-slate-600">{label}</p>
                 <p className="text-sm text-slate-300">{display}</p>
               </div>
             </a>
