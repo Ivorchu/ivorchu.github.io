@@ -1,10 +1,15 @@
 import SectionHeader from '../ui/SectionHeader';
 import { experience } from '../../data/experience';
+import { useReveal } from '../../hooks/useReveal';
 
 export default function Experience() {
+  const { ref, visible } = useReveal();
   return (
     <section id="experience" className="bg-slate-800/30 px-6 py-24">
-      <div className="mx-auto max-w-4xl">
+      <div
+        ref={ref}
+        className={`mx-auto max-w-4xl transition-all duration-700 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
         <SectionHeader title="Experience" />
 
         <div className="space-y-0">
@@ -12,7 +17,7 @@ export default function Experience() {
             <div key={i} className="flex gap-4">
               {/* Timeline column */}
               <div className="flex flex-col items-center pt-1.5">
-                <div className="z-10 h-2.5 w-2.5 shrink-0 rounded-full border border-slate-400 bg-slate-900" />
+                <div className="z-10 h-2.5 w-2.5 shrink-0 rounded-full border border-indigo-400 bg-slate-900" />
                 {i < experience.length - 1 && (
                   <div className="mt-2 min-h-[2rem] w-px flex-1 bg-slate-700" />
                 )}
@@ -20,7 +25,7 @@ export default function Experience() {
 
               {/* Content */}
               <div className={`flex-1 ${i < experience.length - 1 ? 'pb-8' : ''}`}>
-                <div className="rounded-lg border border-slate-700 p-5">
+                <div className="rounded-lg border border-slate-700 p-5 transition-all duration-200 hover:border-slate-500">
                   <div className="mb-1 flex flex-wrap items-start justify-between gap-2">
                     <div>
                       <h3 className="font-semibold text-slate-100">{exp.role}</h3>
@@ -33,7 +38,7 @@ export default function Experience() {
                   </p>
                   <ul className="space-y-1.5">
                     {exp.bullets.map((b, j) => (
-                      <li key={j} className="flex gap-2 text-sm leading-relaxed text-slate-300">
+                      <li key={j} className="flex gap-2 text-base leading-relaxed text-slate-300">
                         <span className="mt-0.5 shrink-0 text-slate-500">–</span>
                         {b}
                       </li>

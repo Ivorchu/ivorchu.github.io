@@ -1,6 +1,7 @@
 import { Mail } from 'lucide-react';
 import { GithubIcon, LinkedinIcon } from '../ui/BrandIcons';
 import SectionHeader from '../ui/SectionHeader';
+import { useReveal } from '../../hooks/useReveal';
 
 const links = [
   {
@@ -24,11 +25,15 @@ const links = [
 ];
 
 export default function Contact() {
+  const { ref, visible } = useReveal();
   return (
     <section id="contact" className="bg-slate-800/30 px-6 py-24">
-      <div className="mx-auto max-w-2xl text-center">
+      <div
+        ref={ref}
+        className={`mx-auto max-w-2xl text-center transition-all duration-700 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
         <SectionHeader title="Contact" centered />
-        <p className="mb-10 text-sm text-slate-400">
+        <p className="mb-10 text-base text-slate-400">
           Open to research collaborations, internship opportunities, or just a conversation about
           computer architecture and AI systems.
         </p>
@@ -39,12 +44,12 @@ export default function Contact() {
               href={href}
               target={href.startsWith('mailto') ? undefined : '_blank'}
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-lg border border-slate-700 px-5 py-4 text-left transition-colors hover:border-slate-500"
+              className="flex items-center gap-3 rounded-lg border border-slate-700 px-5 py-4 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-slate-500"
             >
-              <Icon size={18} className="shrink-0 text-slate-300" />
+              <Icon size={18} className="shrink-0 text-indigo-400" />
               <div>
                 <p className="font-mono text-xs text-slate-500">{label}</p>
-                <p className="text-sm text-slate-200">{display}</p>
+                <p className="text-base text-slate-200">{display}</p>
               </div>
             </a>
           ))}

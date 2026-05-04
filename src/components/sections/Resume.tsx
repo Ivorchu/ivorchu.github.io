@@ -1,15 +1,20 @@
 import { Download, ExternalLink } from 'lucide-react';
 import SectionHeader from '../ui/SectionHeader';
+import { useReveal } from '../../hooks/useReveal';
 
 export default function Resume() {
+  const { ref, visible } = useReveal();
   return (
     <section id="resume" className="px-6 py-24">
-      <div className="mx-auto max-w-2xl text-center">
+      <div
+        ref={ref}
+        className={`mx-auto max-w-2xl text-center transition-all duration-700 ease-out ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
         <SectionHeader title="Resume" centered />
-        <p className="mb-8 text-sm text-slate-400">
+        <p className="mb-8 text-base text-slate-400">
           My full resume covers education, research experience, projects, and technical skills. Drop
           it in{' '}
-          <code className="rounded bg-slate-800 px-1.5 py-0.5 text-xs text-slate-300">
+          <code className="rounded bg-slate-800 px-1.5 py-0.5 text-sm text-slate-300">
             public/resume.pdf
           </code>{' '}
           to activate the links below.

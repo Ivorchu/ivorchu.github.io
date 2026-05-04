@@ -24,7 +24,7 @@ export default function App() {
         <Resume />
         <Contact />
       </main>
-      <footer className="border-t border-slate-800 py-8 text-center font-mono text-xs text-slate-700">
+      <footer className="border-t border-slate-800 py-8 text-center font-mono text-xs text-slate-500">
         <p>Heng-I (Ivor) Chu</p>
       </footer>
     </>
