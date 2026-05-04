@@ -26,14 +26,14 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? 'border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md'
+          ? 'border-b border-slate-700/80 bg-slate-900/90 backdrop-blur-md'
           : 'bg-transparent'
       }`}
     >
       <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
         <a
           href="#home"
-          className="text-lg font-bold tracking-tight text-slate-100 transition-colors hover:text-indigo-400"
+          className="text-lg font-bold tracking-tight text-white transition-colors hover:text-slate-300"
         >
           Ivor Chu
         </a>
@@ -44,7 +44,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-slate-400 transition-colors hover:text-slate-100"
+              className="text-sm text-slate-300 transition-colors hover:text-white"
             >
               {link.label}
             </a>
@@ -53,7 +53,7 @@ export default function Navbar() {
 
         {/* Mobile toggle */}
         <button
-          className="text-slate-400 transition-colors hover:text-slate-100 md:hidden"
+          className="text-slate-300 transition-colors hover:text-white md:hidden"
           onClick={() => setMenuOpen((o) => !o)}
           aria-label="Toggle menu"
         >
@@ -63,13 +63,13 @@ export default function Navbar() {
 
       {/* Mobile drawer */}
       {menuOpen && (
-        <div className="border-t border-slate-800 bg-slate-950/95 px-6 py-5 md:hidden">
+        <div className="border-t border-slate-700 bg-slate-900/95 px-6 py-5 md:hidden">
           <div className="flex flex-col gap-4">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-sm text-slate-400 transition-colors hover:text-slate-100"
+                className="text-sm text-slate-300 transition-colors hover:text-white"
                 onClick={() => setMenuOpen(false)}
               >
                 {link.label}

@@ -32,13 +32,13 @@ export default function About() {
           {/* Text */}
           <div>
             <SectionHeader title="About" />
-            <div className="space-y-4 text-sm leading-relaxed text-slate-400">
+            <div className="space-y-4 text-sm leading-relaxed text-slate-300">
               <p>
-                I'm a Computer Engineering student at{' '}
-                <span className="text-slate-200">Purdue University</span>, focused on computer
-                architecture, GPU systems, and hardware-software co-design. This fall I'm joining{' '}
-                <span className="text-slate-200">Carnegie Mellon University</span> as an MS ECE
-                student.
+                I'm an MS ECE student at{' '}
+                <span className="text-white">Carnegie Mellon University</span>, focused on
+                computer architecture, GPU systems, and hardware-software co-design. I completed my
+                undergraduate degree in Computer Engineering at{' '}
+                <span className="text-white">Purdue University</span>.
               </p>
               <p>
                 My research spans GPU microarchitecture simulation (Accel-Sim / GPGPU-Sim for
@@ -57,12 +57,12 @@ export default function About() {
           {/* Interests */}
           <div className="grid content-start grid-cols-1 gap-3 sm:grid-cols-2">
             {interests.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="rounded-lg border border-slate-800 p-4">
+              <div key={title} className="rounded-lg border border-slate-700 p-4">
                 <div className="mb-2 flex items-center gap-2">
-                  <Icon size={16} className="text-slate-400" />
-                  <h3 className="text-sm font-medium text-slate-300">{title}</h3>
+                  <Icon size={16} className="text-slate-300" />
+                  <h3 className="text-sm font-medium text-slate-200">{title}</h3>
                 </div>
-                <p className="text-xs leading-relaxed text-slate-500">{desc}</p>
+                <p className="text-xs leading-relaxed text-slate-400">{desc}</p>
               </div>
             ))}
           </div>

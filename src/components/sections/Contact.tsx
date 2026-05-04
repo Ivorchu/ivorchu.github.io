@@ -25,10 +25,10 @@ const links = [
 
 export default function Contact() {
   return (
-    <section id="contact" className="px-6 py-24">
+    <section id="contact" className="bg-slate-800/30 px-6 py-24">
       <div className="mx-auto max-w-2xl text-center">
         <SectionHeader title="Contact" centered />
-        <p className="mb-10 text-sm text-slate-500">
+        <p className="mb-10 text-sm text-slate-400">
           Open to research collaborations, internship opportunities, or just a conversation about
           computer architecture and AI systems.
         </p>
@@ -39,12 +39,12 @@ export default function Contact() {
               href={href}
               target={href.startsWith('mailto') ? undefined : '_blank'}
               rel="noopener noreferrer"
-              className="flex items-center gap-3 rounded-lg border border-slate-800 px-5 py-4 text-left transition-colors hover:border-slate-700"
+              className="flex items-center gap-3 rounded-lg border border-slate-700 px-5 py-4 text-left transition-colors hover:border-slate-500"
             >
-              <Icon size={18} className="shrink-0 text-slate-400" />
+              <Icon size={18} className="shrink-0 text-slate-300" />
               <div>
-                <p className="font-mono text-xs text-slate-600">{label}</p>
-                <p className="text-sm text-slate-300">{display}</p>
+                <p className="font-mono text-xs text-slate-500">{label}</p>
+                <p className="text-sm text-slate-200">{display}</p>
               </div>
             </a>
           ))}

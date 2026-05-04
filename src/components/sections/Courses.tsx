@@ -9,26 +9,21 @@ const categories = [
 
 export default function Courses() {
   return (
-    <section id="courses" className="px-6 py-24">
+    <section id="courses" className="bg-slate-800/30 px-6 py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeader title="Coursework" subtitle="Relevant courses at Purdue University" />
         <div className="grid gap-6 md:grid-cols-3">
           {categories.map((cat) => (
-            <div
-              key={cat}
-              className="rounded-xl border border-slate-700/50 bg-slate-800/40 p-6"
-            >
-              <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-indigo-400">
-                {cat}
-              </h3>
+            <div key={cat} className="rounded-lg border border-slate-700 p-6">
+              <h3 className="mb-4 font-mono text-xs text-slate-400">{cat}</h3>
               <ul className="space-y-2.5">
                 {courses
                   .filter((c) => c.category === cat)
                   .map((c) => (
                     <li key={c.name} className="flex items-center justify-between gap-2">
-                      <span className="text-sm text-slate-300">{c.name}</span>
+                      <span className="text-sm text-slate-200">{c.name}</span>
                       {c.code && (
-                        <span className="shrink-0 font-mono text-xs text-slate-600">{c.code}</span>
+                        <span className="shrink-0 font-mono text-xs text-slate-500">{c.code}</span>
                       )}
                     </li>
                   ))}
