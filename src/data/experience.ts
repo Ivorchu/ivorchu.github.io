@@ -2,27 +2,39 @@ import type { ExperienceItem } from '../types';
 
 export const experience: ExperienceItem[] = [
   {
-    role: 'Undergraduate Researcher',
-    company: 'Purdue University — ECE Department',
+    role: 'Undergraduate Research Assistant',
+    company: 'Purdue University Accelerator Architecture Lab',
     location: 'West Lafayette, IN',
-    period: 'Jan 2024 – Present',
+    period: 'Aug 2025 – Present',
     type: 'Research',
     bullets: [
-      'Extended GPGPU-Sim / Accel-Sim to model NVIDIA Hopper WGMMA instruction timing and functional behavior',
-      'Developed AXI + Ramulator2 co-simulation framework for cycle-accurate DDR4 and HBM3 evaluation',
-      'Extended AITemplate and CUTLASS to support generalized N:M structured sparsity for transformer workloads',
+      'Extending Accel-Sim / GPGPU-Sim to support NVIDIA Hopper and Blackwell architectures with PTX ISA 8.x/9.x, WGMMA, descriptor-based shared memory, and warp-group synchronization primitives',
+      'Modified the cycle-level timing model for warp-group scheduling, tensor core pipeline behavior, and asynchronous execution semantics including dependency tracking and descriptor-based memory access',
+      'Collected execution traces with NVBit and validated simulator output against real GPU runs using CUTLASS examples',
     ],
   },
   {
-    role: 'Teaching Assistant — ECE 362',
-    company: 'Purdue University',
-    location: 'West Lafayette, IN',
-    period: 'Aug 2023 – May 2024',
-    type: 'Academic',
+    role: 'Intern Researcher',
+    company: 'Academia Sinica — Institute of Information Science',
+    location: 'Taipei, Taiwan',
+    period: 'Jun 2025 – Aug 2025',
+    type: 'Internship',
     bullets: [
-      'Supported students through microprocessor systems, embedded C programming, and digital logic labs',
-      'Held weekly office hours and graded lab assignments, projects, and exams',
-      'Mentored student teams through ESP32 and ARM Cortex-M embedded system projects',
+      'Designed an end-to-end compiler datapath in AITemplate, lowering PyTorch models to optimized CUDA kernels via NVIDIA CUTLASS, accelerating sparse GEMM on Ampere GPU architectures',
+      'Extended structured sparsity from 2:4 to general N:M formats with a runtime compression pipeline, custom CUDA kernels using warp-level parallelism, and optimized memory layouts',
+      'Integrated sparse ops into the compiler stack (frontend config, backend kernel launch tuning, scheduling), achieving an average 1.8× speedup over dense kernels',
+    ],
+  },
+  {
+    role: 'AI Software Engineer Intern',
+    company: 'Industrial Technology Research Institute (ITRI)',
+    location: 'Hsinchu, Taiwan',
+    period: 'Jun 2024 – Aug 2024',
+    type: 'Internship',
+    bullets: [
+      'Engineered a self-driving pipeline integrating ROS with point cloud detection models, GUI, and solid-state LiDARs (Innoviz, Velodyne M1600) across x86/x64/ARM platforms for real-time object tracking',
+      'Deployed NVIDIA TensorRT and ONNX with hyperparameter tuning, achieving 3× inference throughput improvement for 3D detection models including CenterPoint, PointFormer, and KeyPoint',
+      'Developed point cloud generative models (VAE + PointNet++ + Diffusion + GAN) to synthesize virtual road scenes, improving detection model performance by 15%',
     ],
   },
 ];

@@ -4,16 +4,15 @@ import { courses } from '../../data/courses';
 const categories = [
   'Architecture & Hardware',
   'Systems & Software',
-  'AI & Machine Learning',
-  'Math & Theory',
+  'AI & Theory',
 ] as const;
 
 export default function Courses() {
   return (
     <section id="courses" className="px-6 py-24">
       <div className="mx-auto max-w-6xl">
-        <SectionHeader title="Coursework" subtitle="Selected courses at Purdue University" />
-        <div className="grid gap-6 md:grid-cols-2">
+        <SectionHeader title="Coursework" subtitle="Relevant courses at Purdue University" />
+        <div className="grid gap-6 md:grid-cols-3">
           {categories.map((cat) => (
             <div
               key={cat}

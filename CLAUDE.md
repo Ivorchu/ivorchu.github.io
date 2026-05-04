@@ -27,9 +27,10 @@ Single-page portfolio. No routing — all sections are in-page anchors (`#home`,
 **Content is decoupled from layout.** To update what the site says, only touch `src/data/`:
 
 - `research.ts` — `ResearchItem[]`
-- `projects.ts` — `Project[]`
+- `projects.ts` — `Project[]` (includes optional `period` field shown as subtitle on cards)
 - `experience.ts` — `ExperienceItem[]`
 - `courses.ts` — `Course[]`
+- `skills.ts` — `languages: string[]` and `tools: SkillGroup[]`
 
 Shared TypeScript interfaces for all data shapes live in `src/types/index.ts`.
 

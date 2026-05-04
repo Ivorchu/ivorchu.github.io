@@ -6,7 +6,7 @@ import Tag from './Tag';
 export default function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="group flex flex-col rounded-xl border border-slate-700/50 bg-slate-800/40 p-6 transition-all duration-300 hover:border-indigo-500/40 hover:bg-slate-800/70">
-      <div className="mb-3 flex items-start justify-between gap-2">
+      <div className="mb-1 flex items-start justify-between gap-2">
         <h3 className="text-lg font-semibold text-slate-100 transition-colors group-hover:text-indigo-300">
           {project.title}
         </h3>
@@ -33,6 +33,10 @@ export default function ProjectCard({ project }: { project: Project }) {
           )}
         </div>
       </div>
+
+      {project.period && (
+        <p className="mb-3 text-xs text-slate-500">{project.period}</p>
+      )}
 
       <p className="mb-4 text-sm leading-relaxed text-slate-400">{project.description}</p>
 

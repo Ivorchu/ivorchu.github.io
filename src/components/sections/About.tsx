@@ -15,7 +15,7 @@ const interests = [
   {
     icon: Code2,
     title: 'Systems Programming',
-    desc: 'OS design, embedded systems, RISC-V, real-time systems',
+    desc: 'OS design, compiler construction, RISC-V, embedded systems',
   },
   {
     icon: Layers,
@@ -38,21 +38,20 @@ export default function About() {
                 <span className="font-medium text-slate-200">Purdue University</span>, focused on
                 computer architecture, GPU systems, and hardware-software co-design. This fall I'll
                 be joining{' '}
-                <span className="font-medium text-slate-200">
-                  Carnegie Mellon University
-                </span>{' '}
-                as an MS ECE student.
+                <span className="font-medium text-slate-200">Carnegie Mellon University</span> as
+                an MS ECE student.
               </p>
               <p>
-                My research spans GPU microarchitecture simulation (GPGPU-Sim / Accel-Sim), DRAM
-                memory system co-simulation, and AI/ML compiler work with CUTLASS and AITemplate. I
-                enjoy working at the boundary between hardware and software — where architectural
-                decisions directly shape algorithm performance.
+                My research spans GPU microarchitecture simulation (Accel-Sim / GPGPU-Sim for
+                Hopper and Blackwell), AI/ML compiler work with CUTLASS and AITemplate, and
+                self-driving perception systems. I enjoy working at the boundary between hardware
+                and software — where architectural decisions directly shape algorithm performance.
               </p>
               <p>
-                Outside research, I've built a JOS-style OS, a RISC-V multicore processor with
-                cache coherence, and a distributed IoT system — projects that gave me a deep
-                appreciation for how systems work from transistors up to the OS kernel.
+                Outside research, I've built systems from the ground up: a Unix-like OS, a
+                VLIW compiler for a custom tensor-core ISA, a JEDEC-compliant DDR4 memory
+                controller, and a dual-core RISC-V processor with cache coherence — all
+                synthesized, verified, or validated in silicon-accurate simulators.
               </p>
             </div>
           </div>
