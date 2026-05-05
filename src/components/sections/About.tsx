@@ -36,6 +36,11 @@ export default function About() {
         <div className="grid gap-14 lg:grid-cols-2">
           {/* Text */}
           <div>
+            <img
+              src="/avatar.jpg"
+              alt="Heng-I (Ivor) Chu"
+              className="mb-6 h-28 w-28 rounded-full object-cover ring-2 ring-slate-700"
+            />
             <SectionHeader title="About" />
             <div className="space-y-4 text-base leading-relaxed text-slate-300">
               <p>
